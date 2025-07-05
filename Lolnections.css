@@ -15,6 +15,33 @@ h1 {
     text-shadow: 3px 3px 4px darkgreen
 }
 
+#grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.item {
+  background-color: #1f1f1f;
+  border: 2px solid #444;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item:hover {
+  border-color: #888;
+}
+
+.selected {
+  background-color: #2ecc71;
+  color: #000;
+  border-color: #27ae60;
+}
+
 #buttons {
     display: flex;
     gap: 8px;
@@ -47,4 +74,10 @@ h1 {
     transition: 0.3s;
     color: white;
     transform: scale(0.90);
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 18px;
+  min-height: 24px;
 }
