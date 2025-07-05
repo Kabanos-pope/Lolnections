@@ -1,0 +1,26 @@
+[
+{ "name": "Essence Reaver", "group": "Critical Strike" },
+  { "name": "Lord Dominik's Regards", "group": "Critical Strike" },
+  { "name": "Infinity Edge", "group": "Critical Strike" },
+  { "name": "The Collector", "group": "Critical Strike" },
+
+  { "name": "Zhonya's Hourglass", "group": "Active" },
+  { "name": "Redemption", "group": "Active" },
+  { "name": "Mikael's Blessing", "group": "Active" },
+  { "name": "Shurelya's Battlesong", "group": "Active" },
+
+  { "name": "Warmog's Armor", "group": "Tank" },
+  { "name": "Sunfire Aegis", "group": "Tank" },
+  { "name": "Heartsteel", "group": "Tank" },
+  { "name": "Jak'Sho", "group": "Tank" },
+
+  { "name": "Oblivion Orb", "group": "Grievous-Wounds" },
+  { "name": "Mortal Reminder", "group": "Grievous-Wounds" },
+  { "name": "Executioner's Calling", "group": "Grievous-Wounds" },
+  { "name": "Chempunk Chainsword", "group": "Grievous-Wounds" },
+  { "name": "Bramble Vest", "group": "Grievous-Wounds" },
+  { "name": "Thornmail", "group": "Grievous-Wounds" },
+  { "name": "Morellonomicon", "group": "Grievous-Wounds" }
+
+
+]
