@@ -1,6 +1,7 @@
 let allItems   = [];
 let currentItems = [];
 let selected     = [];
+let allowedGroups = [];
 
 const grid          = document.getElementById("grid");
 const message       = document.getElementById("message");
@@ -10,6 +11,8 @@ const Deselectbutton= document.getElementById("Deselect-btn");
 fetch("Groups-LoLnections.json")
   .then(res => res.json())
   .then(data => {
+    const allGroups = [...new Set(data.map(item => item.group))];
+    allowedGroups = shuffle(allGroups).slice(0, 4);
 
     const groupMap = {};
     data.forEach(item => {
