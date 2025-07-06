@@ -1,29 +1,53 @@
-let allItems   = [];
+let allItems = [];
 let currentItems = [];
-let selected     = [];
+let selected = [];
 let allowedGroups = [];
+let foundGroups = [];
 
-const grid          = document.getElementById("grid");
-const message       = document.getElementById("message");
-const Submitbutton  = document.getElementById("Submit-btn");
-const Deselectbutton= document.getElementById("Deselect-btn");   
+const grid = document.getElementById("grid");
+const message = document.getElementById("message");
+const Submitbutton = document.getElementById("Submit-btn");
+const Deselectbutton = document.getElementById("Deselect-btn");
 
 fetch("Groups-LoLnections.json")
   .then(res => res.json())
   .then(data => {
+
     const allGroups = [...new Set(data.map(item => item.group))];
+
+
     allowedGroups = shuffle(allGroups).slice(0, 4);
 
+ 
     const groupMap = {};
-    data.forEach(item => {
-      if (!groupMap[item.group]) groupMap[item.group] = [];
-      if (groupMap[item.group].length < 4) {
-        groupMap[item.group].push(item);
-      }
-    });
-  
+    const usedNames = new Set();
+
+allowedGroups.forEach(group => {
+  const candidates = shuffle(
+    data.filter(item => item.group === group && !usedNames.has(item.name))
+  );
+
+  const groupItems = [];
+
+  for (const item of candidates) {
+    if (groupItems.length < 4 && !usedNames.has(item.name)) {
+      groupItems.push(item);
+      usedNames.add(item.name);
+    }
+  }
+
+  if (groupItems.length === 4) {
+    groupMap[group] = groupItems;
+  } else {
+    console.warn(`Not enough unique items for group "${group}"`);
+  }
+});
+
+
     allItems = Object.values(groupMap).flat();
-    prepareBoard();
+    currentItems = shuffle([...allItems]);
+
+    renderGrid(currentItems);
   })
   .catch(err => {
     console.error(err);
@@ -38,46 +62,22 @@ function shuffle(arr) {
   return arr;
 }
 
-function getRandomGroup(items) {
-  const groups = [...new Set(items.map(i => i.group))];
-  return groups[Math.floor(Math.random() * groups.length)];
-}
-
-function prepareBoard() {
-  if (allItems.length < 4) {
-    message.textContent = "Game over! No more complete groups left. GG!";
-    return;
-  }
-
-  const correctGroup = getRandomGroup(allItems);
-  const inGroup      = allItems.filter(i => i.group === correctGroup);
-  const outGroup     = allItems.filter(i => i.group !== correctGroup);
-
-
-  if (inGroup.length < 4) {
-    allItems = allItems.filter(i => i.group !== correctGroup);
-    return prepareBoard();
-  }
-
-
-  const correctSet   = shuffle(inGroup).slice(0, 4);
-  const incorrectSet = shuffle(outGroup).slice(0, 12);
-
-  currentItems = shuffle([...correctSet, ...incorrectSet]);
-  renderGrid(currentItems, correctGroup);
-}
-
-function renderGrid(items, correctGroup) {
+function renderGrid(items) {
   grid.innerHTML = "";
   selected = [];
-  grid.dataset.correctGroup = correctGroup;
   message.textContent = "";
 
   items.forEach((item, idx) => {
     const div = document.createElement("div");
     div.className = "item";
     div.innerText = item.name;
-    div.onclick = () => toggleSelect(idx, div);
+
+    if (foundGroups.includes(item.group)) {
+      div.classList.add("correct");
+    } else {
+      div.onclick = () => toggleSelect(idx, div);
+    }
+
     grid.appendChild(div);
   });
 }
@@ -98,23 +98,33 @@ Submitbutton.onclick = () => {
     return;
   }
 
-  const correctGroup = grid.dataset.correctGroup;
-  const pickedGroups = selected.map(i => currentItems[i].group);
-  const allMatch     = pickedGroups.every(g => g === correctGroup);
+  const pickedItems = selected.map(i => currentItems[i]);
+  const pickedGroups = pickedItems.map(item => item.group);
+  const firstGroup = pickedGroups[0];
+  const allSameGroup = pickedGroups.every(g => g === firstGroup);
 
-  if (allMatch) {
-    message.textContent = `🎉 Correct! Those were the 4 from “${correctGroup}”.`;
+  if (allSameGroup && !foundGroups.includes(firstGroup)) {
+    message.textContent = `🎉 Correct! Group: "${firstGroup}"`;
 
-    const names = selected.map(i => currentItems[i].name);
-    allItems = allItems.filter(i =>
-      !(i.group === correctGroup && names.includes(i.name))
-    );
-    prepareBoard();
+   
+    selected.forEach(i => {
+      grid.children[i].classList.add("correct");
+      grid.children[i].classList.remove("selected");
+      grid.children[i].onclick = null;
+    });
+
+    foundGroups.push(firstGroup);
+    selected.forEach(i => grid.children[i].style.visibility = 'hidden');
+
+    if (foundGroups.length === 4) {
+      message.textContent = "🏆 All 4 groups found! GG!";
+    }
   } else {
-    message.textContent = "❌ Nope—those aren’t all from the same group.";
+    message.textContent = "❌ Incorrect! Try again.";
     selected.forEach(i => grid.children[i].classList.remove("selected"));
-    selected = [];
   }
+
+  selected = [];
 };
 
 Deselectbutton.onclick = () => {

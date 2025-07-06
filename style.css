@@ -1,6 +1,7 @@
 body {
     font-family: Comic Sans MS, sans-serif;
     background-image: url('Body.png');
+    background-size: cover;
     color: white;
     display: flex;
     flex-direction: column;

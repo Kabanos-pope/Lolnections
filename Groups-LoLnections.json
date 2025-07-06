@@ -8,6 +8,8 @@
   { "name": "Redemption", "group": "Active" },
   { "name": "Mikael's Blessing", "group": "Active" },
   { "name": "Shurelya's Battlesong", "group": "Active" },
+  { "name": "Locket of the Iron Solari", "group": "Active" },
+  {"name": "Randuin's Omen", "group": "Active" },
 
   { "name": "Warmog's Armor", "group": "Tank" },
   { "name": "Sunfire Aegis", "group": "Tank" },
@@ -31,10 +33,17 @@
     { "name": "Randuin's Omen", "group": "Armor" },
     { "name": "Thornmail", "group": "Armor" },
     { "name": "Chain Vest", "group": "Armor" },
+    { "name": "Plated Steelcaps", "group": "Armor" },
 
     { "name": "Boots of Swiftness", "group": "Boots" },
     { "name": "Berserker's Greaves", "group": "Boots" },
     { "name": "Plated Steelcaps", "group": "Boots" },
-    { "name": "Mercury's Treads", "group": "Boots" }
+    { "name": "Mercury's Treads", "group": "Boots" },
+    { "name": "Boots", "group": "Boots" },
+    { "name": "Ionian Boots of Lucidity", "group": "Boots" },
+    { "name": "Symbiotic Soles", "group": "Boots" },
+    { "name": "Slightly Magical Boots", "group": "Boots" },
+    {"name": "Synchronized Souls", "group": "Boots"}
+
 
 ]
