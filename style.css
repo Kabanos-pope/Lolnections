@@ -1,6 +1,6 @@
 body {
     font-family: Comic Sans MS, sans-serif;
-    background: black;
+    background-image: url('body.jpg');
     color: white;
     display: flex;
     flex-direction: column;
@@ -8,13 +8,14 @@ body {
     padding: 20px;
 }
 
-h1 {
-    background: linear-gradient(45deg, greenyellow 75%, green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 3px 3px 4px darkgreen
+#logo {
+    background-color: rgba(31, 30, 30, 0.6);
+    border-radius: 10px; 
+    height: 50px;
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
 }
-
 #grid {
   display: grid;
   grid-template-columns: repeat(4, 100px);
