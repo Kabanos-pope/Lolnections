@@ -20,7 +20,21 @@
   { "name": "Chempunk Chainsword", "group": "Grievous-Wounds" },
   { "name": "Bramble Vest", "group": "Grievous-Wounds" },
   { "name": "Thornmail", "group": "Grievous-Wounds" },
-  { "name": "Morellonomicon", "group": "Grievous-Wounds" }
+  { "name": "Morellonomicon", "group": "Grievous-Wounds" },
 
+    { "name": "Banshee's Veil", "group": "Magic Resist" },
+    { "name": "Abyssal Mask", "group": "Magic Resist" },
+    { "name": "Force of Nature", "group": "Magic Resist" },
+    { "name": "Spirit Visage", "group": "Magic Resist" },
+    
+    { "name": "Guardian Angel", "group": "Armor" },
+    { "name": "Randuin's Omen", "group": "Armor" },
+    { "name": "Thornmail", "group": "Armor" },
+    { "name": "Chain Vest", "group": "Armor" },
+
+    { "name": "Boots of Swiftness", "group": "Boots" },
+    { "name": "Berserker's Greaves", "group": "Boots" },
+    { "name": "Plated Steelcaps", "group": "Boots" },
+    { "name": "Mercury's Treads", "group": "Boots" }
 
 ]
