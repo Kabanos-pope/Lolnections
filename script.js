@@ -6,6 +6,9 @@ let foundGroups = [];
 
 const grid = document.getElementById("grid");
 const message = document.getElementById("message");
+const win_message = document.getElementById("win_message");
+const pengu_win = document.getElementById("pengu_win");
+const pengu_win2 = document.getElementById("pengu_win2");
 const Submitbutton = document.getElementById("Submit-btn");
 const Deselectbutton = document.getElementById("Deselect-btn");
 
@@ -117,7 +120,9 @@ Submitbutton.onclick = () => {
     selected.forEach(i => grid.children[i].style.visibility = 'hidden');
 
     if (foundGroups.length === 4) {
-      message.textContent = "🏆 All 4 groups found! GG!";
+      win_message.style.display = "flex";
+      grid.style.display = "none";
+      buttons.style.display = "none";
     }
   } else {
     message.textContent = "❌ Incorrect! Try again.";

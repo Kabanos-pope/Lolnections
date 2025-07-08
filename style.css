@@ -9,6 +9,28 @@ body {
     padding: 20px;
 }
 
+#win_message {
+    display: none;
+    align-items: center;
+    background-color: rgba(31, 30, 30, 0.6);
+    border-radius: 10px;
+}
+
+#pengu_win {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    animation: bounce 2s infinite; 
+}
+
+#pengu_win2 {
+    animation-delay: 1s;
+    transform: scaleX(-1);
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    animation: bounce-flip 1.5s infinite;
+}
 #logo {
     background-color: rgba(31, 30, 30, 0.6);
     border-radius: 10px; 
@@ -22,6 +44,7 @@ body {
   grid-template-columns: repeat(4, 100px);
   gap: 10px;
   margin-bottom: 20px;
+  
 }
 
 .item {
@@ -83,3 +106,46 @@ body {
   font-size: 18px;
   min-height: 24px;
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-30px) ;
+  }
+  60% {
+    transform: translateY(-25px) ;
+  }
+  80% {
+    transform: translateY(-10px) ;
+  }
+}
+
+@keyframes bounce-flip {
+  0%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  20% {
+    transform: translateY(-10px) scaleX(-1);
+  }
+  40% {
+    transform: translateY(-20px) scaleX(-1);
+  }
+  50% {
+    transform: translateY(-30px) scaleX(-1);
+  }
+  60% {
+    transform: translateY(-25px) scaleX(-1);
+  }
+  80% {
+    transform: translateY(-10px) scaleX(-1);
+  }
+}
+
