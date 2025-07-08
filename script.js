@@ -73,7 +73,14 @@ function renderGrid(items) {
   items.forEach((item, idx) => {
     const div = document.createElement("div");
     div.className = "item";
-    div.innerText = item.name;
+
+    
+    const img = document.createElement("img");
+    img.src = item.icon; 
+    img.alt = item.name;
+    img.style.width = "64px";  
+    img.style.height = "64px";
+    div.appendChild(img);
 
     if (foundGroups.includes(item.group)) {
       div.classList.add("correct");

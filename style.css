@@ -80,7 +80,7 @@ body {
     transition: 0.5s;
     background-size: 200% auto;
     color: black;
-    border: 0px;
+    border: 2px solid darkgreen;
     border-radius: 10px;
     display: block;
     font-weight: 700;
