@@ -111,8 +111,14 @@ body {
   0%, 100% {
     transform: translateY(0);
   }
+  10% {
+    transform: translateY(-5px);
+  }
   20% {
     transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(-15px);
   }
   40% {
     transform: translateY(-20px);
@@ -123,8 +129,14 @@ body {
   60% {
     transform: translateY(-25px) ;
   }
+  70% {
+    transform: translateY(-15px) ;
+  }
   80% {
     transform: translateY(-10px) ;
+  }
+  90% {
+    transform: translateY(-5px) ;
   }
 }
 
@@ -132,8 +144,14 @@ body {
   0%, 100% {
     transform: translateY(0) scaleX(-1);
   }
+  10% {
+    transform: translateY(-5px) scaleX(-1);
+  }
   20% {
     transform: translateY(-10px) scaleX(-1);
+  }
+  30% {
+    transform: translateY(-15px) scaleX(-1);
   }
   40% {
     transform: translateY(-20px) scaleX(-1);
@@ -144,8 +162,14 @@ body {
   60% {
     transform: translateY(-25px) scaleX(-1);
   }
+  70% {
+    transform: translateY(-15px) scaleX(-1);
+  }
   80% {
     transform: translateY(-10px) scaleX(-1);
+  }
+  90% {
+    transform: translateY(-5px) scaleX(-1);
   }
 }
 

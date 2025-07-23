@@ -15,41 +15,38 @@ const Deselectbutton = document.getElementById("Deselect-btn");
 fetch("Groups-LoLnections.json")
   .then(res => res.json())
   .then(data => {
-
     const allGroups = [...new Set(data.map(item => item.group))];
-
-
-    allowedGroups = shuffle(allGroups).slice(0, 4);
-
- 
+    let availableGroups = shuffle([...allGroups]);
     const groupMap = {};
     const usedNames = new Set();
+    allowedGroups = [];
 
-allowedGroups.forEach(group => {
-  const candidates = shuffle(
-    data.filter(item => item.group === group && !usedNames.has(item.name))
-  );
-
-  const groupItems = [];
-
-  for (const item of candidates) {
-    if (groupItems.length < 4 && !usedNames.has(item.name)) {
-      groupItems.push(item);
-      usedNames.add(item.name);
+    
+    while (allowedGroups.length < 4 && availableGroups.length > 0) {
+      const group = availableGroups.shift();
+      const candidates = shuffle(
+        data.filter(item => item.group === group && !usedNames.has(item.name))
+      );
+      const groupItems = [];
+      for (const item of candidates) {
+        if (groupItems.length < 4 && !usedNames.has(item.name)) {
+          groupItems.push(item);
+        }
+      }
+      if (groupItems.length === 4) {
+        groupItems.forEach(item => usedNames.add(item.name));
+        groupMap[group] = groupItems;
+        allowedGroups.push(group);
+      }
     }
-  }
 
-  if (groupItems.length === 4) {
-    groupMap[group] = groupItems;
-  } else {
-    console.warn(`Not enough unique items for group "${group}"`);
-  }
-});
-
+    if (allowedGroups.length < 4) {
+      message.textContent = "Not enough groups with 4 unique items each!";
+      return;
+    }
 
     allItems = Object.values(groupMap).flat();
     currentItems = shuffle([...allItems]);
-
     renderGrid(currentItems);
   })
   .catch(err => {

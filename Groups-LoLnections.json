@@ -4,6 +4,7 @@
   { "name": "Infinity Edge", "icon": "item_icons/Infinity_Edge_item.png", "group": "Critical Strike" },
   { "name": "The Collector", "icon": "item_icons/The_Collector_item.png", "group": "Critical Strike" },
 
+
   { "name": "Zhonya's Hourglass", "icon": "item_icons/Zhonya's_Hourglass_item.png", "group": "Active" },
   { "name": "Redemption", "icon": "item_icons/Redemption_item.png", "group": "Active" },
   { "name": "Mikael's Blessing", "icon": "item_icons/Mikael's_Blessing_item.png", "group": "Active" },
@@ -36,14 +37,38 @@
     { "name": "Plated Steelcaps", "icon": "item_icons/Plated_Steelcaps_item.png", "group": "Armor" },
 
     { "name": "Boots of Swiftness", "icon": "item_icons/Boots_of_Swiftness_item.png", "group": "Boots" },
+    {"name": "Swiftmarch", "icon": "item_icons/Swiftmarch_item.png", "group": "Boots"},
     { "name": "Berserker's Greaves", "icon": "item_icons/Berserker's_Greaves_item.png", "group": "Boots" },
+    {"name": "Gunmetal Greaves", "icon": "item_icons/Gunmetal_Greaves_item.png", "group": "Boots"},
     { "name": "Plated Steelcaps", "icon": "item_icons/Plated_Steelcaps_item.png", "group": "Boots" },
+    {"name": "Armored Advance", "icon": "item_icons/Armored_Advance_item.png", "group": "Boots"},
     { "name": "Mercury's Treads", "icon": "item_icons/Mercury's_Treads_item.png", "group": "Boots" },
+    {"name": "Chainlaced Crushers", "icon": "item_icons/Chainlaced_Crushers_item.png", "group": "Boots"},
     { "name": "Boots", "icon": "item_icons/Boots_item.png", "group": "Boots" },
     { "name": "Ionian Boots of Lucidity", "icon": "item_icons/Ionian_Boots_of_Lucidity_item.png", "group": "Boots" },
+    {"name": "Crimson Lucidity", "icon": "item_icons/Crimson_Lucidity_item.png", "group": "Boots"},
     { "name": "Symbiotic Soles", "icon": "item_icons/Symbiotic_Soles_item.png", "group": "Boots" },
     { "name": "Slightly Magical Boots", "icon": "item_icons/Slightly_Magical_Boots_item.png", "group": "Boots" },
-    {"name": "Synchronized Souls", "icon": "item_icons/Synchronized_Souls_item.png", "group": "Boots"}
+    {"name": "Synchronized Souls", "icon": "item_icons/Synchronized_Souls_item.png", "group": "Boots"},
+    {"name": "Forever Forward", "icon": "item_icons/Forever_Forward_item.png", "group": "Boots"},
+    {"name": "Sorcerer's Shoes", "icon": "item_icons/Sorcerer's_Shoes_item.png", "group": "Boots"},
+    {"name": "Spellslinger's Shoes", "icon": "item_icons/Spellslinger's_Shoes_item.png", "group": "Boots"},
+
+    {"name": "Cull", "icon": "item_icons/Cull_item.png", "group": "Starting Items" },
+    { "name": "Doran's Blade", "icon": "item_icons/Doran's_Blade_item.png", "group": "Starting Items" },
+    { "name": "Doran's Ring", "icon": "item_icons/Doran's_Ring_item.png", "group": "Starting Items" },
+    { "name": "Doran's Shield", "icon": "item_icons/Doran's_Shield_item.png", "group": "Starting Items" },
+    { "name": "Dark Seal", "icon": "item_icons/Dark_Seal_item.png", "group": "Starting Items" },
+    { "name": "Guardian's Blade", "icon": "item_icons/Guardian's_Blade_item.png", "group": "Starting Items" },
+    { "name": "Guardian's Horn", "icon": "item_icons/Guardian's_Horn_item.png", "group": "Starting Items" },
+    { "name": "Guardian's Hammer", "icon": "item_icons/Guardian's_Hammer_item.png", "group": "Starting Items" },
+    { "name": "Guardian's Orb", "icon": "item_icons/Guardian's_Orb_item.png", "group": "Starting Items" },
+    { "name": "Gustwalker Hatchling", "icon": "item_icons/Gustwalker_Hatchling_item.png", "group": "Starting Items" },
+    { "name": "Scorchclaw Pup", "icon": "item_icons/Scorchclaw_Pup_item.png", "group": "Starting Items" },
+    { "name": "Mosstomper Seedling", "icon": "item_icons/Mosstomper_Seedling_item.png", "group": "Starting Items" },
+    { "name": "Tear of the Goddess", "icon": "item_icons/Tear_of_the_Goddess_item.png", "group": "Starting Items" },
+    { "name": "World Atlas", "icon": "item_icons/World_Atlas_item.png", "group": "Starting Items" }
+
 
 
 ]
